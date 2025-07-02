@@ -1,0 +1,22 @@
+// style.scss
+
+// 1. Abstracts
+@use "abstracts/variables";
+@use "abstracts/mixins";
+
+// 2. Base
+@use "base/reset";
+@use "base/base";
+
+// 3. Layout
+@use "layout/footer";
+@use "layout/main";
+
+// 4. Components
+@use "components/navbar";
+
+// 5. Pages
+@use "pages";
+
+// 6. Vendors
+@use "vendors/bootstrap";
