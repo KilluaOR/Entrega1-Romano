@@ -52,18 +52,36 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="favicon" />
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
+
     <link rel="stylesheet" href="css/style.css" />
     <title>Killu Books</title>
   </head>
   <body>
-    <!--navbar-->
-    <header></header>
+    <header>
+      <div class="searchbar" id="searchBar">
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="Busca tus libros acá" />
+        <button id="closeSearch">&times;</button>
+      </div>
+      <button id="openSearch" class="search-icon">
+        <i class="fas fa-search"></i>
+      </button>
+    </header>
     <main></main>
     <footer>
-      <nav class="navbar">
-        <label for="inicio">
-          <input type="radio" name="group" id="inicio" class="nav__input" />
-        </label>
+      <nav class="footer-nav">
+        <a href="#"><i class="fas fa-home"></i><span>Para ti</span></a>
+        <a href="#" class="active"
+          ><i class="fas fa-search"></i><span>Explora</span></a
+        >
+        <a href="#"
+          ><i class="fas fa--shopping-cart"></i><span>Carrito</span></a
+        >
+        <a href="#"><i class="fas fa-user"></i><span>Cuenta</span></a>
       </nav>
     </footer>
     <script src="main.js"></script>
