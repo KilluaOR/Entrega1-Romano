@@ -3,7 +3,7 @@ let compra = () => {
 };
 let venta = () => {
   const accionVenta = alert(
-    "Andá a vender y publica el libro que desees vender"
+    "Andá a la pestaña Vender y publica el libro que desees vender"
   );
 };
 let operacion = (op) => {
