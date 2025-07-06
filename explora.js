@@ -1,12 +1,14 @@
 const biblioteca = [
-  "1- The Enchante Forest",
-  "2- Shadows of the Past",
-  "3- Beyon the Stars",
-  "4- The Silent Witness",
-  "5- Echoes of Tomorrow",
-  "6- Crimson Tide",
-  "7- Whispers in the Wind",
+  "The Enchante Forest",
+  "Shadows of the Past",
+  "Beyon the Stars",
+  "The Silent Witness",
+  "Echoes of Tomorrow",
+  "Crimson Tide",
+  "Whispers in the Wind",
 ];
+
+let lista = "Lista de libros:\n";
 
 let operacion = (op) => {
   console.log("operacion", op);
@@ -16,7 +18,10 @@ let operacion = (op) => {
 };
 
 let buscarLibro = (titulo) => {
-  let pregunta = prompt(`Elige el libro que buscabas: ` + biblioteca);
+  for (let i = 0; i < biblioteca.length; i++) {
+    lista += `- ${biblioteca[i]}\n`;
+  }
+  let pregunta = prompt(`Elige el libro que buscabas: ` + lista);
   operacion(Number(pregunta));
 };
 
