@@ -1,5 +1,5 @@
 📁 Estructura del proyecto
-preEntrega2Romano/
+Entrega1Romano/
 ├── index.html
 ├── css/
 │ └── style.css
@@ -17,26 +17,23 @@ preEntrega2Romano/
 │ │ ├── \_footer.scss
 │ │ └── \_main.scss
 │ ├── pages/
-│ │ ├── \_about.scss
-│ │ ├── \_contact.scss
-│ │ ├── \_designs.scss
-│ │ └── \_projects.scss
+│ │ ├── \_buscar.scss
+│ │ ├── \_carrito.scss
+│ │ ├── \_cuenta.scss
+│ │ └── \_ventas.scss
 │ ├── vendors/
 │ │ └── \_bootstrap.scss
 │ └── style.scss
+├── pages.js/
+│ ├── buscar.js
 ├── pages/
-│ ├── about.html
-│ ├── contact.html
-│ ├── designs.html
-│ └── projects.html
+│ ├── buscar.html
+│ ├── carrito.html
+│ ├── cuenta.html
+│ └── ventas.html
 ├── images/
-│ └── img-open-graph.png (y otras imágenes)
 ├── assets/
 ├── icons/
-│ └── WhatsApp-Image.png (favicon)
 ├── wireframe/
-│ └── (archivos relacionados con wireframes o prototipos)
 ├── .gitignore
-├── package.json
-├── package-lock.json
 └── README.md
