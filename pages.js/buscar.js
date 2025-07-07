@@ -1,7 +1,7 @@
 const biblioteca = [
-  "1_The Enchante Forest",
+  "1_The Enchanted Forest",
   "2_Shadows of the Past",
-  "3_Beyon the Stars",
+  "3_Beyond the Stars",
   "4_The Silent Witness",
   "5_Echoes of Tomorrow",
   "6_Crimson Tide",

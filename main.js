@@ -1,9 +1,11 @@
 let compra = () => {
-  const accionCompra = alert("Andá a Buscar y busca tu libro de preferencia");
+  const accionCompra = alert(
+    "Ve a la pestaña Buscar y busca tu libro de preferencia"
+  );
 };
 let venta = () => {
   const accionVenta = alert(
-    "Andá a la pestaña Vender y publica el libro que desees vender"
+    "Ve a la pestaña Vender y publica el libro que desees vender"
   );
 };
 let operacion = (op) => {
