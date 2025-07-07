@@ -11,20 +11,51 @@ const biblioteca = [
 let lista = "Lista de libros:\n";
 
 let operacion = (op) => {
-  
-  if (console.log("operacion", op);) {
-    alert(
+  console.log("operacion", op);
+  switch (op) {
+    case 1:
+      alert(
         "En este momento no contamos con información sobre este libro, intente más tarde."
       );
-  } else {
+      break;
+    case 2:
+      venta();
+      break;
+    case 3:
+      alert(
+        "En este momento no contamos con información sobre este libro, intente más tarde."
+      );
+      break;
+    case 4:
+      alert(
+        "En este momento no contamos con información sobre este libro, intente más tarde."
+      );
+      break;
+    case 5:
+      alert(
+        "En este momento no contamos con información sobre este libro, intente más tarde."
+      );
+      break;
+    case 6:
+      alert(
+        "En este momento no contamos con información sobre este libro, intente más tarde."
+      );
+      break;
+    case 7:
+      alert(
+        "En este momento no contamos con información sobre este libro, intente más tarde."
+      );
+      break;
+    default:
+      alert("Por favor elija una de las opciones disponibles");
       principal();
   }
 };
 
+for (let i = 0; i < biblioteca.length; i++) {
+  lista += `${biblioteca[i]}\n`;
+}
 let buscarLibro = (titulo) => {
-  for (let i = 0; i < biblioteca.length; i++) {
-    lista += `${biblioteca[i]}\n`;
-  }
   let pregunta = prompt(`Elige el libro que buscabas: ` + lista);
   operacion(Number(pregunta));
 };
