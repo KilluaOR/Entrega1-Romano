@@ -1,5 +1,5 @@
 📁 Estructura del proyecto
-Entrega1Romano/
+Entrega1-Romano/
 ├── index.html
 ├── css/
 │ └── style.css
