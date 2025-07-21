@@ -16,6 +16,34 @@ const libreria = [
   },
 ];
 
+// Elementos del DOM
+const input = document.getElementById("search-input");
+const booksContainer = document.getElementById("books-container");
+const books = booksContainer.querySelectorAll(
+  "div.flex.h-full.flex-1.flex-col"
+);
+const notFoundMsg = document.getElementById("not-found-message");
+
+// Escuchar el input de búsqueda
+input.addEventListener("input", () => {
+  const searchTerm = input.value.toLowerCase().trim();
+  let anyMatch = false;
+
+  books.forEach((bookEl, index) => {
+    const { nombre, descripcion } = libreria[index];
+    const match =
+      nombre.toLowerCase().includes(searchTerm) ||
+      descripcion.toLowerCase().includes(searchTerm);
+
+    // Mostrar u ocultar el libro
+    bookEl.style.display = match ? "flex" : "none";
+    if (match) anyMatch = true;
+  });
+
+  // Mostrar mensaje si no hay coincidencias
+  notFoundMsg.classList.toggle("hidden", anyMatch || searchTerm === "");
+});
+
 // Acá la idea es que cuando buscas un libro en el buscador, la página vaya mostrando solo las coincidencias//
 // function fn(libreria) {
 // 		const buscarLibro = libreria.find(
