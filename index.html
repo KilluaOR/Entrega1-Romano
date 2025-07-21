@@ -41,61 +41,37 @@
     <meta name="twitter:image" content="" />
     <meta name="author" content="Ornella Romano" />
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
     <link
       rel="stylesheet"
       as="style"
       onload="this.rel='stylesheet'"
       href="https://fonts.googleapis.com/css2?display=swap&amp;family=Newsreader%3Awght%40400%3B500%3B700%3B800&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900"
     />
-
     <title>Killu Books</title>
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
-
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   </head>
   <body>
     <div
-      class="relative flex size-full min-h-screen flex-col bg-[#f9f9fb] justify-between group/design-root overflow-x-hidden"
+      class="relative flex size-full min-h-screen flex-col bg-[#161122] dark justify-between group/design-root overflow-x-hidden"
       style="font-family: Newsreader, 'Noto Sans', sans-serif"
     >
       <div>
-        <div class="flex items-center bg-[#f9f9fb] p-4 pb-2 justify-between">
-          <h2
-            class="text-[#131019] text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pl-12"
-          >
-            Killu Books
-          </h2>
-          <div class="flex w-12 items-center justify-end">
-            <button
-              class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 bg-transparent text-[#131019] gap-2 text-base font-bold leading-normal tracking-[0.015em] min-w-0 p-0"
-            >
-              <div
-                class="text-[#131019]"
-                data-icon="ShoppingCart"
-                data-size="24px"
-                data-weight="regular"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24px"
-                  height="24px"
-                  fill="currentColor"
-                  viewBox="0 0 256 256"
-                >
-                  <path
-                    d="M222.14,58.87A8,8,0,0,0,216,56H54.68L49.79,29.14A16,16,0,0,0,34.05,16H16a8,8,0,0,0,0,16h18L59.56,172.29a24,24,0,0,0,5.33,11.27,28,28,0,1,0,44.4,8.44h45.42A27.75,27.75,0,0,0,152,204a28,28,0,1,0,28-28H83.17a8,8,0,0,1-7.87-6.57L72.13,152h116a24,24,0,0,0,23.61-19.71l12.16-66.86A8,8,0,0,0,222.14,58.87ZM96,204a12,12,0,1,1-12-12A12,12,0,0,1,96,204Zm96,0a12,12,0,1,1-12-12A12,12,0,0,1,192,204Zm4-74.57A8,8,0,0,1,188.1,136H69.22L57.59,72H206.41Z"
-                  ></path>
-                </svg>
-              </div>
-            </button>
+        <div class="@container">
+          <div class="@[480px]:px-4 @[480px]:py-3">
+            <div
+              class="w-full bg-center bg-no-repeat bg-cover flex flex-col justify-end overflow-hidden bg-[#161122] @[480px]:rounded-xl min-h-80"
+              style="
+                background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC7BK1hCqlitjvTwI5ZrSwr6RAlKPaumvsuZwS4tB3Y0-5rpIgzPARIsTYM0II75UsOIK3VlEdnYzBm6I_xJ29s74BbYWuEIf6a1Zu9uYryYpyPZP429zRtMnWlLN9yj7HOEAxZBJU0v2zbEHVkuj9T4HtWN8wlXSMgEG_BuqZ3VRgUxWw3zhb4UlEpdVWq4U7aZeKeW7ZbNcumOkDEopzpM4nxEKTii0toJC0d2fhTtct-5oKvPnhxl1cvVACz6Vij7Ux_k-_eng');
+              "
+            ></div>
           </div>
         </div>
         <div class="px-4 py-3">
           <label class="flex flex-col min-w-40 h-12 w-full">
-            <div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+            <div class="flex w-full flex-1 items-stretch rounded-xl h-full">
               <div
-                class="text-[#69578e] flex border-none bg-[#ece9f1] items-center justify-center pl-4 rounded-l-lg border-r-0"
+                class="text-[#a392c9] flex border-none bg-[#2f2348] items-center justify-center pl-4 rounded-l-xl border-r-0"
                 data-icon="MagnifyingGlass"
                 data-size="24px"
                 data-weight="regular"
@@ -114,44 +90,14 @@
               </div>
               <input
                 placeholder="Search for books"
-                class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#131019] focus:outline-0 focus:ring-0 border-none bg-[#ece9f1] focus:border-none h-full placeholder:text-[#69578e] px-4 rounded-l-none border-l-0 pl-2 text-base font-normal leading-normal"
+                class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-white focus:outline-0 focus:ring-0 border-none bg-[#2f2348] focus:border-none h-full placeholder:text-[#a392c9] px-4 rounded-l-none border-l-0 pl-2 text-base font-normal leading-normal"
                 value=""
               />
             </div>
           </label>
         </div>
-        <div class="flex gap-3 p-3 overflow-x-hidden">
-          <div
-            class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#ece9f1] pl-4 pr-4"
-          >
-            <p class="text-[#131019] text-sm font-medium leading-normal">
-              Featured
-            </p>
-          </div>
-          <div
-            class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#ece9f1] pl-4 pr-4"
-          >
-            <p class="text-[#131019] text-sm font-medium leading-normal">
-              New Arrivals
-            </p>
-          </div>
-          <div
-            class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#ece9f1] pl-4 pr-4"
-          >
-            <p class="text-[#131019] text-sm font-medium leading-normal">
-              Best Sellers
-            </p>
-          </div>
-          <div
-            class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#ece9f1] pl-4 pr-4"
-          >
-            <p class="text-[#131019] text-sm font-medium leading-normal">
-              Genres
-            </p>
-          </div>
-        </div>
         <h2
-          class="text-[#131019] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5"
+          class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5"
         >
           Featured Books
         </h2>
@@ -161,239 +107,65 @@
           <div class="flex items-stretch p-4 gap-3">
             <div class="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-60">
               <div
-                class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-lg flex flex-col"
+                class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-xl flex flex-col"
                 style="
-                  background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBfDKxQpRHFk8G7KM4fChT88SEylo1r2yDekQAOn-4_X3LqIggle4r6crCIuBV4KNmG6isAE4cE0CPBCGpAqVjK2HcCM4ZT0dlyiTECIOhu3LEoRcytjhDqOe8C1tgXdJkfv6VkXwzbRIW-BTTdQKfZat_yC473O69CwSgsstzK9l-RTKXbylHU_Vwtu5qCjSAgPZN8B3LViJrcRU7O9_NkofDMZFjl3Z2WnfHZmgcL53j8o89uFlVMrorIByBPosu7sNKQUTEffQ');
+                  background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAiAy_HU0CkJSTOHoxkrQySfGFhnR49NUz1hVBkQt32usWTfjNkU-Lbu1h8qXkWcz35KGofJXDzlDfmdUvY5Z8LECOAjBzFmj3CrJ_QcpXEkJ8_lbWgGyuWAwIJBZJ7Glfb5O7n-IrBrtDoBTFQrYga4jbWmQRdk_SLdHugqi_kwewJz4rtqa0ZC-9I973bL9vkHGyNhf2sMsmXq5I8MOeruqgvOD6AL5wLNGZLcc3plo6xLqtB3GWHngU6Zm5yt3Am5aGsefLScA');
                 "
               ></div>
-              <p class="text-[#131019] text-base font-medium leading-normal">
-                The Enchanted Forest
-              </p>
+              <div>
+                <p class="text-white text-base font-medium leading-normal">
+                  The Enchanted Forest
+                </p>
+                <p class="text-[#a392c9] text-sm font-normal leading-normal">
+                  A tale of magic and adventure
+                </p>
+              </div>
             </div>
             <div class="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-60">
               <div
-                class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-lg flex flex-col"
+                class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-xl flex flex-col"
                 style="
-                  background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAyyY1wAoSJ8WP4JSZiWUnzeTCdvolvCrfBpsOQ18Fj7cJ-V5FRoEVJ_OMPEE0VlyeQaljdl5R3KcC6UkOJs1ASsJ8FiIADcf8sGALoxcEcuitvXpLMcH15sPgRZ1MZO-IbbyDin9pBViPXJKFrp4SDedyGh_gcPnhbNAJYp7wwld2vjOYlfs44o7YB3JvNGN-YqGtCTAleTy0ZHyrD3tHSQEjrLUzssYI1kLZB6in1YOIxcnsJR7zP3h5RVpQH5LNrl0PweqnKQQ');
+                  background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD5uOxcII1Rlfiu6qshZQx4gAplxrUKsdt8in0EGFwN4VyVSXlo9rdGINlhLFapG1oaiMHvX0Ei1ioo4WB9RPADNTUVEwwXoCem3ikzpkbk9XfL7Kmt5IQh7uHhPxyTS-_QQ_d_vPP7krAf4iq_I36mbWFHBkqfG7nj7rCRavoAFZPcawa1K7kMrviWCGj_AS0GzpIDtITCA0-deUn7Lyg32A-L-pZJ9IWURItbSdWdRaV0cGeesnY1QTJQ0y6PLGQHWnCHow1cQQ');
                 "
               ></div>
-              <p class="text-[#131019] text-base font-medium leading-normal">
-                Shadows of the Past
-              </p>
+              <div>
+                <p class="text-white text-base font-medium leading-normal">
+                  Space Odyssey
+                </p>
+                <p class="text-[#a392c9] text-sm font-normal leading-normal">
+                  Journey through the cosmos
+                </p>
+              </div>
             </div>
             <div class="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-60">
               <div
-                class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-lg flex flex-col"
+                class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-xl flex flex-col"
                 style="
-                  background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB8YgMtp_JE9o556DcD1vaisflnk6NiytOxLp3t3VcUhEeuCF2J5Dl8njh6PWG79BaR8aJSQccODdMaqRI1nBZweKbRn3F6UIB61QZ1CYKtAx8CXtCpR4PvCeC7csuqFXpG9M1qFK3HT0GSRJ92gMlFtyNi1yK1p-sPmggTZn1mukY_p1wjFYLAy6bRhW46JB7PrRWP-Cl8vK-AjmX3GJfcFFZ-6gqJfyxKIySSH12HKotRdlMaqWC-oDkBUDjCPFzf_rB9O6_HFg');
+                  background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCtDtJ_uqlMYl1V5kHtRWqw3ycbAeBt_Cnr6f6D1w3Jr2iCMWDWMGzbRgDGmu0Zth0IHwQHnrHrvS8NkkReVCbbD6z1uNpK5qgUYw-jOWj86srxqCe73qKWSTlSBvulXWi1wymEaYW1Acc2dtg_lTqJBq9Uec6lrDb_JYgixI1kXY2qsMsp48SUGB2Z0mGiz4eDWHCqlfL_6O3RLt7pxnE85jcyl1cX7X9FPD1KLC-N_BwmzwhOfsRr9uyZCkR5RUmDe_tpw8WJlA');
                 "
               ></div>
-              <p class="text-[#131019] text-base font-medium leading-normal">
-                Beyond the Stars
-              </p>
+              <div>
+                <p class="text-white text-base font-medium leading-normal">
+                  The Secret Code
+                </p>
+                <p class="text-[#a392c9] text-sm font-normal leading-normal">
+                  Unravel the mystery
+                </p>
+              </div>
             </div>
-          </div>
-        </div>
-        <h2
-          class="text-[#131019] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5"
-        >
-          Recently Added
-        </h2>
-        <div
-          class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4"
-        >
-          <div class="flex flex-col gap-3 pb-3">
-            <div
-              class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-lg"
-              style="
-                background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAXFc06CAzZC5Eb_1rIj-3WngQ-99GYO9J5S8TjG9a8Ld_6g04iaG6E4oYhVkrXYK4bbqEpvQHQ5KW7dcqqJk0M_axLOoRpMKZol20DINz-lETiYN4YYp_GWFVPQOVQ-njlRVKsON-gg79Q2UuQcPA_Ms5wM1nztTasY7EbnuRU5i8KVQYvGaJ8lNrLvrWpv2ldBSqFHkd6QdMKw_0Qwm8SvS6cMYxPQNaz7FsTvknW-QqKeJKPEP5iuV9T7zli8BNuwBz1PI19cg');
-              "
-            ></div>
-            <p class="text-[#131019] text-base font-medium leading-normal">
-              The Silent Witness
-            </p>
-          </div>
-          <div class="flex flex-col gap-3 pb-3">
-            <div
-              class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-lg"
-              style="
-                background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAxh_r4BxBnQlDJvwMM-B1o0lUR7iytG4TxdHRMG5iBwl63nXQ9XwjbKjym9-kYbF2bfMKLuIws1HTd7nb3MASI0CNxjjWUmDoZ9LMkLU2Vdo9MOEAMSHptXOMQqLKvavXuBBl878PmXj9sLM6l1pNLlXgWb5P38JTmcusupRWnDLdJTiJyhqFT17hZpZ-qF_DUjdcHhLcGK8_QUcWeXaLrX3rSBhNl6RynLgLMbXF5As4K46zDf3JHtL75nCsxuO_2GVj155Lc5w');
-              "
-            ></div>
-            <p class="text-[#131019] text-base font-medium leading-normal">
-              Echoes of Tomorrow
-            </p>
-          </div>
-          <div class="flex flex-col gap-3 pb-3">
-            <div
-              class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-lg"
-              style="
-                background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCzSCl0foMttBaNjWqJ6aBGkOVVSegiTZpUEuiABVAzcYR2fw18hyEko88SS5j842-O7EVWgKfzM9nAqU_EsHTVQCu7DQMrVyXIt4tsqi9Aa3bd65E3YL78EdeFqrHgPXeeSIUXAC1pGNotHUA18O3o_G82v9AuYjPOjWdsEudeYjCl_KitVi11a_gHFQzAx0of4XHPy03h7dStJC8tQKpGdjPwTquz8bcMKRDV5sk1dWmv2KqGn3dHuL42PQo7CGiwe4YQtiBF9Q');
-              "
-            ></div>
-            <p class="text-[#131019] text-base font-medium leading-normal">
-              Crimson Tide
-            </p>
-          </div>
-          <div class="flex flex-col gap-3 pb-3">
-            <div
-              class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-lg"
-              style="
-                background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCUhY8yOohp3mb2Ls5fuPqif2GpxB9SlkFZcJwjHUrtGWyu6qCJBDhqWdg0AnImFBAo10VJJllHAYsQd5akfKXh3Iv-yDFgVqvXSWrMUnKM5OFOW6EvK9KlXSaZa__CtZrlNY4R2yGeLoTiktUFmb3ZwdJyorqYpuDYgw5F3aILAf4xKIgWH_7w6271qiBDjCtt6MGSpbIygde4SiXYA4IUICN82Wj_ppSmDDWVVEhBKaT0tsRUFBf3ggehrcuvxPE4hckks9IZTQ');
-              "
-            ></div>
-            <p class="text-[#131019] text-base font-medium leading-normal">
-              Whispers in the Wind
-            </p>
           </div>
         </div>
       </div>
       <div>
-        <div
-          class="flex gap-2 border-t border-[#ece9f1] bg-[#f9f9fb] px-4 pb-3 pt-2"
-        >
+        <div class="flex px-4 py-3">
           <a
-            class="just flex flex-1 flex-col items-center justify-end gap-1 rounded-full text-[#131019]"
-            href="index.html"
+            href="pages/checkout.html"
+            class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-5 flex-1 bg-[#5713eb] text-white text-base font-bold leading-normal tracking-[0.015em]"
           >
-            <div
-              class="text-[#131019] flex h-8 items-center justify-center"
-              data-icon="House"
-              data-size="24px"
-              data-weight="fill"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24px"
-                height="24px"
-                fill="currentColor"
-                viewBox="0 0 256 256"
-              >
-                <path
-                  d="M224,115.55V208a16,16,0,0,1-16,16H168a16,16,0,0,1-16-16V168a8,8,0,0,0-8-8H112a8,8,0,0,0-8,8v40a16,16,0,0,1-16,16H48a16,16,0,0,1-16-16V115.55a16,16,0,0,1,5.17-11.78l80-75.48.11-.11a16,16,0,0,1,21.53,0,1.14,1.14,0,0,0,.11.11l80,75.48A16,16,0,0,1,224,115.55Z"
-                ></path>
-              </svg>
-            </div>
-            <p
-              class="text-[#131019] text-xs font-medium leading-normal tracking-[0.015em]"
-            >
-              Inicio
-            </p>
-          </a>
-          <a
-            class="just flex flex-1 flex-col items-center justify-end gap-1 text-[#69578e]"
-            href="pages/buscar.html"
-          >
-            <div
-              class="text-[#69578e] flex h-8 items-center justify-center"
-              data-icon="MagnifyingGlass"
-              data-size="24px"
-              data-weight="regular"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24px"
-                height="24px"
-                fill="currentColor"
-                viewBox="0 0 256 256"
-              >
-                <path
-                  d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"
-                ></path>
-              </svg>
-            </div>
-            <p
-              class="text-[#69578e] text-xs font-medium leading-normal tracking-[0.015em]"
-            >
-              Buscar
-            </p>
-          </a>
-          <a
-            class="just flex flex-1 flex-col items-center justify-end gap-1 text-[#69578e]"
-            href="pages/ventas.html"
-          >
-            <div
-              class="text-[#69578e] flex h-8 items-center justify-center"
-              data-icon="PlusSquare"
-              data-size="24px"
-              data-weight="regular"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24px"
-                height="24px"
-                fill="currentColor"
-                viewBox="0 0 256 256"
-              >
-                <path
-                  d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32Zm0,176H48V48H208V208Zm-32-80a8,8,0,0,1-8,8H136v32a8,8,0,0,1-16,0V136H88a8,8,0,0,1,0-16h32V88a8,8,0,0,1,16,0v32h32A8,8,0,0,1,176,128Z"
-                ></path>
-              </svg>
-            </div>
-            <p
-              class="text-[#69578e] text-xs font-medium leading-normal tracking-[0.015em]"
-            >
-              Vender
-            </p>
-          </a>
-          <a
-            class="just flex flex-1 flex-col items-center justify-end gap-1 text-[#69578e]"
-            href="pages/cuenta.html"
-          >
-            <div
-              class="text-[#69578e] flex h-8 items-center justify-center"
-              data-icon="User"
-              data-size="24px"
-              data-weight="regular"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24px"
-                height="24px"
-                fill="currentColor"
-                viewBox="0 0 256 256"
-              >
-                <path
-                  d="M230.92,212c-15.23-26.33-38.7-45.21-66.09-54.16a72,72,0,1,0-73.66,0C63.78,166.78,40.31,185.66,25.08,212a8,8,0,1,0,13.85,8c18.84-32.56,52.14-52,89.07-52s70.23,19.44,89.07,52a8,8,0,1,0,13.85-8ZM72,96a56,56,0,1,1,56,56A56.06,56.06,0,0,1,72,96Z"
-                ></path>
-              </svg>
-            </div>
-            <p
-              class="text-[#69578e] text-xs font-medium leading-normal tracking-[0.015em]"
-            >
-              Perfil
-            </p>
-          </a>
-          <a
-            class="just flex flex-1 flex-col items-center justify-end gap-1 text-[#6a5c8a]"
-            href="pages/carrito.html"
-          >
-            <div
-              class="text-[#6a5c8a] flex h-8 items-center justify-center"
-              data-icon="ShoppingCart"
-              data-size="24px"
-              data-weight="regular"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24px"
-                height="24px"
-                fill="currentColor"
-                viewBox="0 0 256 256"
-              >
-                <path
-                  d="M222.14,58.87A8,8,0,0,0,216,56H54.68L49.79,29.14A16,16,0,0,0,34.05,16H16a8,8,0,0,0,0,16h18L59.56,172.29a24,24,0,0,0,5.33,11.27,28,28,0,1,0,44.4,8.44h45.42A27.75,27.75,0,0,0,152,204a28,28,0,1,0,28-28H83.17a8,8,0,0,1-7.87-6.57L72.13,152h116a24,24,0,0,0,23.61-19.71l12.16-66.86A8,8,0,0,0,222.14,58.87ZM96,204a12,12,0,1,1-12-12A12,12,0,0,1,96,204Zm96,0a12,12,0,1,1-12-12A12,12,0,0,1,192,204Zm4-74.57A8,8,0,0,1,188.1,136H69.22L57.59,72H206.41Z"
-                ></path>
-              </svg>
-            </div>
-            <p
-              class="text-[#6a5c8a] text-xs font-medium leading-normal tracking-[0.015em]"
-            >
-              Carrito
-            </p>
+            <span class="truncate">Continue</span>
           </a>
         </div>
-        <div class="h-5 bg-[#f9f9fb]"></div>
+        <div class="h-5 bg-[#161122]"></div>
       </div>
     </div>
     <script src="main.js"></script>
