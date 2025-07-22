@@ -1,0 +1,13 @@
+{
+  "name": "entrega1-romano",
+  "version": "1.0.0",
+  "description": "Proyecto de e-commerce con SCSS estructurado",
+  "main": "index.js",
+  "scripts": {
+    "dev": "sass --watch scss/style.scss css/style.css --source-map",
+    "build": "sass scss/style.scss css/style.css --style=compressed"
+  },
+  "devDependencies": {
+    "sass": "^1.72.0"
+  }
+}

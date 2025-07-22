@@ -1,21 +1,40 @@
-@mixin respond-to($breakpoint) {
-  @if $breakpoint == xs {
-    @media (max-width: 575.98px) {
-      @content;
-    }
-  } @else if $breakpoint == sm {
-    @media (max-width: 767.98px) {
-      @content;
-    }
-  } @else if $breakpoint == md {
-    @media (max-width: 991.98px) {
-      @content;
-    }
-  } @else if $breakpoint == lg {
-    @media (max-width: 1199.98px) {
+// Breakpoints Mobile First
+$breakpoints: (
+  "sm": 480px,
+  "md": 768px,
+  "lg": 1024px,
+  "xl": 1280px,
+);
+
+@mixin respond($bp) {
+  $size: map-get($breakpoints, $bp);
+
+  @if $size {
+    @media (min-width: $size) {
       @content;
     }
   } @else {
-    @warn "Breakpoint '#{$breakpoint}' no está definido.";
+    @warn "No existe el breakpoint #{$bp}";
   }
+}
+
+// Mixin para grid flexible
+@mixin flex-grid($gap: 1rem, $align: stretch, $justify: flex-start) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $gap;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+// Mixin tipografía fluida
+@mixin fluid-text($min-size, $max-size, $min-vw: 320px, $max-vw: 1280px) {
+  font-size: clamp(
+    $min-size,
+    calc(
+      #{$min-size} + (#{$max-size} - #{$min-size}) * ((100vw - #{$min-vw}) /
+            (#{$max-vw} - #{$min-vw}))
+    ),
+    $max-size
+  );
 }

@@ -17,20 +17,14 @@ Entrega1-Romano/
 │ │ ├── \_footer.scss
 │ │ └── \_main.scss
 │ ├── pages/
-│ │ ├── \_buscar.scss
-│ │ ├── \_carrito.scss
-│ │ ├── \_cuenta.scss
-│ │ └── \_ventas.scss
+│ │ ├── \_checkout.scss
 │ ├── vendors/
 │ │ └── \_bootstrap.scss
 │ └── style.scss
 ├── pages.js/
-│ ├── buscar.js
+│ ├── checkout.js
 ├── pages/
-│ ├── buscar.html
-│ ├── carrito.html
-│ ├── cuenta.html
-│ └── ventas.html
+│ ├── checkout.html
 ├── images/
 ├── assets/
 ├── icons/
