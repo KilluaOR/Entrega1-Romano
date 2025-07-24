@@ -136,4 +136,57 @@
   background-color: rgb(120.2165354331, 65.3346456693, 239.6653543307);
 }
 
+.book-card {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.book-card:hover {
+  transform: translateY(-5px);
+}
+
+.book-cover {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f3f3f3;
+  overflow: hidden;
+}
+
+.book-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.book-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin: 10px 0 5px;
+  text-align: center;
+}
+
+.book-desc {
+  font-size: 0.9rem;
+  color: #555;
+  text-align: center;
+  padding: 0 10px;
+}
+
+.book-price {
+  font-size: 1rem;
+  color: #5713eb;
+  margin: 8px 0 12px;
+  font-weight: bold;
+}
+
 /*# sourceMappingURL=style.css.map */
