@@ -1,23 +1,23 @@
 const libreria = [
   {
-    nombre: "The Enchanted Forest",
-    descripcion: "A tale of magic and adventure",
+    nombre: "Veronika Decide Morir",
+    descripcion:
+      "Cuenta la historia de una joven de 24 años, llamada Veronika, que decide acabar con su vida. Tras fracasar en su intento de suicidio, es ingresada en un hospital psiquiátrico donde vive experiencias dramáticas y del que sale más abierta a la vida.",
     precio: "$20.000",
-    imagen:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuAiAy_HU0CkJSTOHoxkrQySfGFhnR49NUz1hVBkQt32usWTfjNkU-Lbu1h8qXkWcz35KGofJXDzlDfmdUvY5Z8LECOAjBzFmj3CrJ_QcpXEkJ8_lbWgGyuWAwIJBZJ7Glfb5O7n-IrBrtDoBTFQrYga4jbWmQRdk_SLdHugqi_kwewJz4rtqa0ZC-9I973bL9vkHGyNhf2sMsmXq5I8MOeruqgvOD6AL5wLNGZLcc3plo6xLqtB3GWHngU6Zm5yt3Am5aGsefLScA",
+    imagen: "../images/libro1-veronika.jpg",
   },
   {
-    nombre: "Space Odyssey",
-    descripcion: "Journey through the cosmos",
+    nombre: "Cadaver Exquisito",
+    descripcion:
+      "En esta historia, se plantea una sociedad en la que el canibalismo y la cría de personas para el consumo se han legalizado. A través del uso del lenguaje y de situaciones crudas y perturbadoras, la autora nos hace reflexionar sobre nuestra propia realidad.",
     precio: "$15.000",
-    imagen:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuD5uOxcII1Rlfiu6qshZQx4gAplxrUKsdt8in0EGFwN4VyVSXlo9rdGINlhLFapG1oaiMHvX0Ei1ioo4WB9RPADNTUVEwwXoCem3ikzpkbk9F7Lyg32A-L-pZJ9IWURItbSdWdRaV0cGeesnY1QTJQ0y6PLGQHWnCHow1cQQ",
+    imagen: "../images/libro2-cadaver-exquisito.jpg",
   },
   {
-    nombre: "The Secret Code",
-    descripcion: "Unravel the mystery",
+    nombre: "Rayuela",
+    descripcion:
+      "La novela cuenta la historia de Horacio Oliveira, un intelectual argentino radicado en Francia durante la primera parte del libro. Es una obra sinigual, controversial y muchas veces catalogada de antinovela debido a las peculiaridades de su estructura y su carácter experimental en el lenguaje y otros elementos de la narración.",
     precio: "$30.000",
-    imagen:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuCtDtJ_uqlMYl1V5kHtRWqw3ycbAeBt_Cnr6f6D1w3Jr2iCMWDWMGzbRgDGmu0Zth0IHwQHnrHrvS8NkkReVCbbD6z1uNpK5qgUYw-jOWj86srxCe73qKWSTlSBvulXWi1wymEaYW1Acc2dtg_lTqJBq9Uec6lrDb_JYgixI1kXY2qsMsp48SUGB2Z0mGiz4eDWHCqlfL_6O3RLt7pxnE85jcyl1cX7X9FPD1KLC-N_BwmzwhOfsRr9uyZCkR5RUmDe_tpw8WJlA",
+    imagen: "../images/libro3-rayuela.jpg",
   },
 ];

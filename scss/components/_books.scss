@@ -1,52 +1,80 @@
-.book-card {
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  background-color: #fff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transition: transform 0.3s ease;
-}
+.books {
+  padding: 1rem;
 
-.book-card:hover {
-  transform: translateY(-5px);
-}
+  .books-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
 
-.book-cover {
-  width: 100%;
-  height: 300px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #f3f3f3;
-  overflow: hidden;
-}
+  .books-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
 
-.book-cover img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include desktop {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
 
-.book-title {
-  font-size: 1.1rem;
-  font-weight: bold;
-  margin: 10px 0 5px;
-  text-align: center;
-}
+  .book-card {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(230, 217, 217, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease;
+    gap: 0.5rem;
+    background-color: #554676;
+    padding: 1rem;
+  }
+  .book-card:hover {
+    transform: translateY(-5px);
+  }
 
-.book-desc {
-  font-size: 0.9rem;
-  color: #555;
-  text-align: center;
-  padding: 0 10px;
-}
+  .book-cover {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #100e0e;
+    overflow: hidden;
+    aspect-ratio: 3/4;
+    background-size: cover;
+    background-position: center;
+    border-radius: 6px;
+  }
 
-.book-price {
-  font-size: 1rem;
-  color: #5713eb;
-  margin: 8px 0 12px;
-  font-weight: bold;
+  .book-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+
+  .book-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin: 10px 0 5px;
+    text-align: center;
+  }
+
+  .book-desc {
+    font-size: 0.9rem;
+    color: $color-text-muted;
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  .book-price {
+    font-size: 1rem;
+    color: #d7d3df;
+    margin: 8px 0 12px;
+    font-weight: bold;
+  }
 }

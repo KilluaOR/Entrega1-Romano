@@ -12,55 +12,55 @@ main {
     text-align: center;
   }
 
-  #books-container {
-    @include flex-grid(1rem, flex-start, center);
-    overflow-x: auto;
-    scrollbar-width: none;
+  // #books-container {
+  //   @include flex-grid(1rem, flex-start, center);
+  //   overflow-x: auto;
+  //   scrollbar-width: none;
 
-    &::-webkit-scrollbar {
-      display: none;
-    }
+  //   &::-webkit-scrollbar {
+  //     display: none;
+  //   }
 
-    .book-card {
-      flex: 1 1 140px;
-      max-width: 200px;
-      background-color: #2f2348;
-      border-radius: 12px;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.2s ease;
-      cursor: pointer;
+  //   .book-card {
+  //     flex: 1 1 140px;
+  //     max-width: 200px;
+  //     background-color: #65528b;
+  //     border-radius: 12px;
+  //     overflow: hidden;
+  //     display: flex;
+  //     flex-direction: column;
+  //     transition: transform 0.2s ease;
+  //     cursor: pointer;
 
-      &:hover {
-        transform: scale(1.05);
-        box-shadow: 0 0 12px #5713eb;
-      }
+  //     &:hover {
+  //       transform: scale(1.05);
+  //       box-shadow: 0 0 12px #5713eb;
+  //     }
 
-      .book-image {
-        width: 100%;
-        aspect-ratio: 3 / 4;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-      }
+  //     .book-image {
+  //       width: 100%;
+  //       aspect-ratio: 3 / 4;
+  //       background-position: center;
+  //       background-repeat: no-repeat;
+  //       background-size: cover;
+  //     }
 
-      .book-info {
-        padding: 0.75rem 1rem;
+  //     .book-info {
+  //       padding: 0.75rem 1rem;
 
-        .book-name {
-          font-weight: 600;
-          color: #fff;
-          @include fluid-text(1rem, 1.2rem);
-        }
+  //       .book-name {
+  //         font-weight: 600;
+  //         color: #fff;
+  //         @include fluid-text(1rem, 1.2rem);
+  //       }
 
-        .book-desc {
-          color: #a392c9;
-          font-size: 0.9rem;
-        }
-      }
-    }
-  }
+  //       .book-desc {
+  //         color: #a392c9;
+  //         font-size: 0.9rem;
+  //       }
+  //     }
+  //   }
+  // }
 
   // Responsividad con mixins
   @include respond("md") {
