@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Get cart from localStorage
   const cart = JSON.parse(localStorage.getItem("cart")) || [];
   const checkoutItems = document.querySelector(".checkout__items");
   const subtotalElement = document.getElementById("subtotal");
@@ -7,12 +6,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const thankYouElement = document.getElementById("thank-you");
   const checkoutButton = document.querySelector(".checkout__button");
 
-  // Function to calculate price as number
   const parsePrice = (priceString) => {
     return parseInt(priceString.replace(/[^0-9]/g, ""));
   };
 
-  // Function to display cart items
   const displayCartItems = () => {
     if (cart.length === 0) {
       checkoutItems.innerHTML =
@@ -47,44 +44,36 @@ document.addEventListener("DOMContentLoaded", () => {
     checkoutItems.innerHTML = itemsHTML;
   };
 
-  // Function to calculate totals
   const calculateTotals = () => {
     const subtotal = cart.reduce((total, item) => {
       return total + parsePrice(item.precio) * item.quantity;
     }, 0);
 
-    const shipping = 0; // Free shipping
+    const shipping = 0;
     const total = subtotal + shipping;
 
     subtotalElement.textContent = `$${subtotal.toLocaleString()}`;
     totalElement.textContent = `$${total.toLocaleString()}`;
   };
 
-  // Function to handle checkout
   const handleCheckout = () => {
     if (cart.length === 0) {
       return;
     }
 
-    // Show thank you message
     thankYouElement.classList.remove("hidden");
 
-    // Hide checkout button
     checkoutButton.style.display = "none";
 
-    // Clear cart
     localStorage.removeItem("cart");
 
-    // Clear display
     checkoutItems.innerHTML = "";
     subtotalElement.textContent = "$0";
     totalElement.textContent = "$0";
   };
 
-  // Add event listener to checkout button
   checkoutButton.addEventListener("click", handleCheckout);
 
-  // Initialize display
   displayCartItems();
   calculateTotals();
 });

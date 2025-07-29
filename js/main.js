@@ -24,16 +24,13 @@ document.addEventListener("DOMContentLoaded", () => {
     </div>
   `;
 
-  // Cart functionality
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-  // Function to save cart to localStorage
   const saveCart = () => {
     localStorage.setItem("cart", JSON.stringify(cart));
     updateCartCounter();
   };
 
-  // Function to update cart counter
   const updateCartCounter = () => {
     const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
     const cartCounter = document.querySelector(".cart-counter");
@@ -43,7 +40,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  // Function to add item to cart
   const addToCart = (bookName) => {
     const book = libreria.find((b) => b.nombre === bookName);
     if (book) {
@@ -58,7 +54,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       saveCart();
 
-      // Visual feedback
       const button = document.querySelector(`[data-book="${bookName}"]`);
       if (button) {
         const originalText = button.textContent;
@@ -72,7 +67,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  // Add event listeners to all "Add to Cart" buttons
   document.addEventListener("click", (e) => {
     if (e.target.classList.contains("add-to-cart")) {
       const bookName = e.target.getAttribute("data-book");
@@ -80,7 +74,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Initialize cart counter
   updateCartCounter();
 
   const input = document.getElementById("search-input");
