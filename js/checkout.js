@@ -20,24 +20,24 @@ document.addEventListener("DOMContentLoaded", () => {
     const itemsHTML = cart
       .map(
         (item) => `
-       <div class="flex items-center justify-between p-4 border-b border-gray-700">
-         <div class="flex items-center space-x-4">
-           <img src="../${item.imagen}" alt="${
+        <div class="flex items-center justify-between p-4 border-b border-gray-700">
+          <div class="flex items-center space-x-4">
+            <img src="../${item.imagen.replace("./", "")}" alt="${
           item.nombre
         }" class="w-16 h-20 object-cover rounded">
-           <div>
-             <h3 class="text-white font-medium">${item.nombre}</h3>
-             <p class="text-gray-400 text-sm">Cantidad: ${item.quantity}</p>
-           </div>
-         </div>
-         <div class="text-right">
-           <p class="text-white">${item.precio}</p>
-           <p class="text-gray-400 text-sm">Total: $${
-             parsePrice(item.precio) * item.quantity
-           }</p>
-         </div>
-       </div>
-     `
+            <div>
+              <h3 class="text-white font-medium">${item.nombre}</h3>
+              <p class="text-gray-400 text-sm">Cantidad: ${item.quantity}</p>
+            </div>
+          </div>
+          <div class="text-right">
+            <p class="text-white">${item.precio}</p>
+            <p class="text-gray-400 text-sm">Total: $${
+              parsePrice(item.precio) * item.quantity
+            }</p>
+          </div>
+        </div>
+      `
       )
       .join("");
 
