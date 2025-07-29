@@ -1,4 +1,3 @@
-// Breakpoints Mobile First
 $breakpoints: (
   "sm": 480px,
   "md": 768px,
@@ -18,7 +17,6 @@ $breakpoints: (
   }
 }
 
-// Mixin para grid flexible
 @mixin flex-grid($gap: 1rem, $align: stretch, $justify: flex-start) {
   display: flex;
   flex-wrap: wrap;
@@ -27,7 +25,6 @@ $breakpoints: (
   justify-content: $justify;
 }
 
-// Mixin tipografía fluida
 @mixin fluid-text($min-size, $max-size, $min-vw: 320px, $max-vw: 1280px) {
   font-size: clamp(
     $min-size,

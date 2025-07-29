@@ -1,21 +1,15 @@
-// Abstracts (variables y mixins)
 @import "abstracts/variables";
 @import "abstracts/mixins";
 
-// Vendors (Bootstrap u otras librerías)
 @import "vendors/bootstrap";
 
-// Base (reset y estilos globales)
 @import "base/reset";
 @import "base/base";
 
-// Layout (estructuras del sitio)
 @import "layout/main";
 @import "layout/footer";
 
-// Components (componentes reutilizables como navbar)
 @import "components/navbar";
 @import "components/books";
 
-// Pages (estilos de páginas específicas)
 @import "pages/checkout";
