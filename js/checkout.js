@@ -1,56 +1,90 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // Get cart from localStorage
   const cart = JSON.parse(localStorage.getItem("cart")) || [];
-  const totalEl = document.querySelector("#total");
-  const checkoutBtn = document.querySelector(".checkout__button");
-  const container = document.querySelector(".book-card");
+  const checkoutItems = document.querySelector(".checkout__items");
+  const subtotalElement = document.getElementById("subtotal");
+  const totalElement = document.getElementById("total");
+  const thankYouElement = document.getElementById("thank-you");
+  const checkoutButton = document.querySelector(".checkout__button");
 
-  container.innerHTML = "";
+  // Function to calculate price as number
+  const parsePrice = (priceString) => {
+    return parseInt(priceString.replace(/[^0-9]/g, ""));
+  };
 
-  if (cart.length === 0) {
-    container.innerHTML = `<p class="text-white text-center p-4">Tu carrito está vacío</p>`;
-    if (totalEl) totalEl.textContent = "$0";
-  } else {
-    let total = 0;
+  // Function to display cart items
+  const displayCartItems = () => {
+    if (cart.length === 0) {
+      checkoutItems.innerHTML =
+        '<p class="text-white text-center py-4">Tu carrito está vacío</p>';
+      return;
+    }
 
-    cart.forEach((item) => {
-      const subtotal = item.price * item.quantity;
-      total += subtotal;
+    const itemsHTML = cart
+      .map(
+        (item) => `
+       <div class="flex items-center justify-between p-4 border-b border-gray-700">
+         <div class="flex items-center space-x-4">
+           <img src="../${item.imagen}" alt="${
+          item.nombre
+        }" class="w-16 h-20 object-cover rounded">
+           <div>
+             <h3 class="text-white font-medium">${item.nombre}</h3>
+             <p class="text-gray-400 text-sm">Cantidad: ${item.quantity}</p>
+           </div>
+         </div>
+         <div class="text-right">
+           <p class="text-white">${item.precio}</p>
+           <p class="text-gray-400 text-sm">Total: $${
+             parsePrice(item.precio) * item.quantity
+           }</p>
+         </div>
+       </div>
+     `
+      )
+      .join("");
 
-      const bookDiv = document.createElement("div");
-      bookDiv.className = "flex gap-4 bg-[#18151e] px-4 py-3 justify-between";
+    checkoutItems.innerHTML = itemsHTML;
+  };
 
-      bookDiv.innerHTML = `
-        <div class="flex items-start gap-4">
-          <div class="bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-lg w-[70px]"
-               style="background-image: url('${item.image}')"></div>
-          <div class="flex flex-1 flex-col justify-center">
-            <p class="text-white text-base font-medium leading-normal">${
-              item.title
-            }</p>
-            <p class="text-[#a89ebd] text-sm font-normal leading-normal">Cantidad: ${
-              item.quantity
-            }</p>
-            <p class="text-[#a89ebd] text-sm font-normal leading-normal">$${item.price.toLocaleString(
-              "es-AR"
-            )}</p>
-          </div>
-        </div>
-      `;
-      container.appendChild(bookDiv);
-    });
+  // Function to calculate totals
+  const calculateTotals = () => {
+    const subtotal = cart.reduce((total, item) => {
+      return total + parsePrice(item.precio) * item.quantity;
+    }, 0);
 
-    if (totalEl) totalEl.textContent = `$${total.toLocaleString("es-AR")}`;
-  }
+    const shipping = 0; // Free shipping
+    const total = subtotal + shipping;
 
-  if (checkoutBtn) {
-    checkoutBtn.addEventListener("click", () => {
-      document.body.innerHTML = `
-        <div class="flex flex-col items-center justify-center min-h-screen text-center text-white bg-[#18151e]">
-          <h1 class="text-2xl font-bold mb-4">¡Gracias por tu compra!</h1>
-          <p class="text-[#a89ebd]">Tu pedido será procesado en breve.</p>
-        </div>
-      `;
-      localStorage.removeItem("cart");
-    });
-  }
+    subtotalElement.textContent = `$${subtotal.toLocaleString()}`;
+    totalElement.textContent = `$${total.toLocaleString()}`;
+  };
+
+  // Function to handle checkout
+  const handleCheckout = () => {
+    if (cart.length === 0) {
+      return;
+    }
+
+    // Show thank you message
+    thankYouElement.classList.remove("hidden");
+
+    // Hide checkout button
+    checkoutButton.style.display = "none";
+
+    // Clear cart
+    localStorage.removeItem("cart");
+
+    // Clear display
+    checkoutItems.innerHTML = "";
+    subtotalElement.textContent = "$0";
+    totalElement.textContent = "$0";
+  };
+
+  // Add event listener to checkout button
+  checkoutButton.addEventListener("click", handleCheckout);
+
+  // Initialize display
+  displayCartItems();
+  calculateTotals();
 });

@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const section = document.querySelector(".books");
 
-  // Generar los libros
   const myBooks = libreria
     .map(
       (book) =>
@@ -13,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <p class="book-title">${book.nombre}</p>
             <p class="book-desc">${book.descripcion}</p>
             <p class="book-price">${book.precio}</p>
-            <button class="add-to-cart">Agregar al carrito</button>
+            <button class="add-to-cart" data-book="${book.nombre}">Agregar al carrito</button>
           </div>`
     )
     .join("");
@@ -24,6 +23,65 @@ document.addEventListener("DOMContentLoaded", () => {
       ${myBooks}
     </div>
   `;
+
+  // Cart functionality
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  // Function to save cart to localStorage
+  const saveCart = () => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+    updateCartCounter();
+  };
+
+  // Function to update cart counter
+  const updateCartCounter = () => {
+    const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+    const cartCounter = document.querySelector(".cart-counter");
+    if (cartCounter) {
+      cartCounter.textContent = totalItems;
+      cartCounter.style.display = totalItems > 0 ? "block" : "none";
+    }
+  };
+
+  // Function to add item to cart
+  const addToCart = (bookName) => {
+    const book = libreria.find((b) => b.nombre === bookName);
+    if (book) {
+      const existingItem = cart.find((item) => item.nombre === bookName);
+      if (existingItem) {
+        existingItem.quantity += 1;
+      } else {
+        cart.push({
+          ...book,
+          quantity: 1,
+        });
+      }
+      saveCart();
+
+      // Visual feedback
+      const button = document.querySelector(`[data-book="${bookName}"]`);
+      if (button) {
+        const originalText = button.textContent;
+        button.textContent = "¡Agregado!";
+        button.style.backgroundColor = "#4CAF50";
+        setTimeout(() => {
+          button.textContent = originalText;
+          button.style.backgroundColor = "";
+        }, 1000);
+      }
+    }
+  };
+
+  // Add event listeners to all "Add to Cart" buttons
+  document.addEventListener("click", (e) => {
+    if (e.target.classList.contains("add-to-cart")) {
+      const bookName = e.target.getAttribute("data-book");
+      addToCart(bookName);
+    }
+  });
+
+  // Initialize cart counter
+  updateCartCounter();
 
   const input = document.getElementById("search-input");
   const books = document.querySelectorAll(".book-card");
@@ -47,41 +105,4 @@ document.addEventListener("DOMContentLoaded", () => {
       notFoundMsg.classList.toggle("hidden", anyMatch || searchTerm === "");
     }
   });
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-  const bookCards = document.querySelectorAll(".book-card");
-  const cartCount = document.querySelector("#cart-count");
-
-  // Cargar carrito o inicializar
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-  function updateCartCount() {
-    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-    if (cartCount) cartCount.textContent = totalItems;
-  }
-
-  function addToCart(book) {
-    const existing = cart.find((item) => item.title === book.title);
-    if (existing) {
-      existing.quantity++;
-    } else {
-      cart.push({ ...book, quantity: 1 });
-    }
-    localStorage.setItem("cart", JSON.stringify(cart));
-    updateCartCount();
-  }
-
-  bookCards.forEach((card) => {
-    card.addEventListener("click", () => {
-      const book = {
-        title: card.dataset.title,
-        price: parseFloat(card.dataset.price),
-        image: card.dataset.image,
-      };
-      addToCart(book);
-    });
-  });
-
-  updateCartCount(); // Actualiza número al cargar página
 });
