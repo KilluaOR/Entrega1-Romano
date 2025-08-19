@@ -11,5 +11,4 @@ const libreria = async () => {
   }
 };
 
-// Export the function so main.js can use it
 window.libreria = libreria;
