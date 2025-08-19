@@ -1,7 +1,15 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
   const section = document.querySelector(".books");
 
-  const myBooks = libreria
+  const booksData = await libreria();
+
+  if (!booksData || booksData.length === 0) {
+    section.innerHTML =
+      "<p>Error al cargar los libros. Por favor, intenta de nuevo.</p>";
+    return;
+  }
+
+  const myBooks = booksData
     .map(
       (book) =>
         `<div class="book-card" data-title="${book.nombre}">
@@ -41,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const addToCart = (bookName) => {
-    const book = libreria.find((b) => b.nombre === bookName);
+    const book = booksData.find((b) => b.nombre === bookName);
     if (book) {
       const existingItem = cart.find((item) => item.nombre === bookName);
       if (existingItem) {
@@ -85,7 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let anyMatch = false;
 
     books.forEach((bookEl, index) => {
-      const libro = libreria[index];
+      const libro = booksData[index];
       const match =
         libro.nombre.toLowerCase().includes(searchTerm) ||
         libro.descripcion.toLowerCase().includes(searchTerm);
