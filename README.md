@@ -12,22 +12,21 @@ Entrega1-Romano/
 │ │ ├── \_base.scss
 │ │ └── \_reset.scss
 │ ├── components/
-│ │ └── \_navbar.scss
+│ │ └── \_books.scss
 │ ├── layout/
 │ │ ├── \_footer.scss
 │ │ └── \_main.scss
 │ ├── pages/
 │ │ ├── \_checkout.scss
-│ ├── vendors/
-│ │ └── \_bootstrap.scss
+│ │ ├── \_index.scss
 │ └── style.scss
-├── pages.js/
+├── js/
 │ ├── checkout.js
+│ ├── libreria.js
+│ ├── main.js
 ├── pages/
 │ ├── checkout.html
 ├── images/
-├── assets/
 ├── icons/
-├── wireframe/
 ├── .gitignore
 └── README.md
