@@ -22,9 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
         (item) => `
         <div class="flex items-center justify-between p-4 border-b border-gray-700">
           <div class="flex items-center space-x-4">
-            <img src="../${item.imagen.replace("./", "")}" alt="${
-          item.nombre
-        }" class="w-16 h-20 object-cover rounded">
+            <img  alt="${item.nombre}" class="w-16 h-20 object-cover rounded">
             <div>
               <h3 class="text-white font-medium">${item.nombre}</h3>
               <p class="text-gray-400 text-sm">Cantidad: ${item.quantity}</p>

@@ -9,7 +9,6 @@ Entrega1-Romano/
 │ │ ├── \_mixins.scss
 │ │ └── \_variables.scss
 │ ├── base/
-│ │ ├── \_base.scss
 │ │ └── \_reset.scss
 │ ├── components/
 │ │ └── \_books.scss

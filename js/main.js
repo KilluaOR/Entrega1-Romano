@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             <p class="book-title">${book.nombre}</p>
             <p class="book-desc">${book.descripcion}</p>
             <p class="book-price">${book.precio}</p>
-            <button class="add-to-cart" data-book="${book.nombre}">Agregar al carrito</button>
+            <button class="add-to-cart button is-inverted is-light" data-book="${book.nombre}">Agregar al carrito</button>
           </div>`
     )
     .join("");
