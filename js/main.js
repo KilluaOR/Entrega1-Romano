@@ -47,7 +47,16 @@ document.addEventListener("DOMContentLoaded", async () => {
       cartCounter.style.display = totalItems > 0 ? "block" : "none";
     }
   };
-
+  const deleteCart = () => {
+    localStorage.removeItem("cart");
+    cart = [];
+    updateCartCounter();
+  };
+  document.addEventListener("click", (e) => {
+    if (e.target.classList.contains("delete-cart")) {
+      deleteCart();
+    }
+  });
   const addToCart = (bookName) => {
     const book = booksData.find((b) => b.nombre === bookName);
     if (book) {

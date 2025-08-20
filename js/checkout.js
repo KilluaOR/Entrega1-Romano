@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const totalElement = document.getElementById("total");
   const thankYouElement = document.getElementById("thank-you");
   const checkoutButton = document.querySelector(".checkout__button");
+  const deleteButton = document.querySelector(".delete__button");
 
   const parsePrice = (priceString) => {
     return parseInt(priceString.replace(/[^0-9]/g, ""));
@@ -22,7 +23,9 @@ document.addEventListener("DOMContentLoaded", () => {
         (item) => `
         <div class="flex items-center justify-between p-4 border-b border-gray-700">
           <div class="flex items-center space-x-4">
-            <img  alt="${item.nombre}" class="w-16 h-20 object-cover rounded">
+            <img src="${item.imagen}" alt="${
+          item.nombre
+        }" class="w-16 h-20 object-cover rounded">
             <div>
               <h3 class="text-white font-medium">${item.nombre}</h3>
               <p class="text-gray-400 text-sm">Cantidad: ${item.quantity}</p>
@@ -54,6 +57,19 @@ document.addEventListener("DOMContentLoaded", () => {
     totalElement.textContent = `$${total.toLocaleString()}`;
   };
 
+  const deleteCart = () => {
+    localStorage.removeItem("cart");
+    // Clear the cart display
+    checkoutItems.innerHTML =
+      '<p class="text-white text-center py-4">Tu carrito está vacío</p>';
+    // Reset totals
+    subtotalElement.textContent = "$0";
+    totalElement.textContent = "$0";
+    // Hide checkout button since cart is empty
+    checkoutButton.style.display = "none";
+    deleteButton.style.display = "none";
+  };
+
   const handleCheckout = () => {
     if (cart.length === 0) {
       return;
@@ -62,6 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
     thankYouElement.classList.remove("hidden");
 
     checkoutButton.style.display = "none";
+    deleteButton.style.display = "none";
 
     localStorage.removeItem("cart");
 
@@ -71,6 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   checkoutButton.addEventListener("click", handleCheckout);
+  deleteButton.addEventListener("click", deleteCart);
 
   displayCartItems();
   calculateTotals();
