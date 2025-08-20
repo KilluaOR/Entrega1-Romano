@@ -26,16 +26,16 @@ document.addEventListener("DOMContentLoaded", async () => {
     .join("");
 
   section.innerHTML = `
-    <h2 class="books-title">Featured Books</h2>
+    <h2 class="books-title">Nuestra biblioteca</h2>
     <div id="books-container" class="books-list">
       ${myBooks}
     </div>
   `;
 
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  let cart = JSON.parse(sessionStorage.getItem("cart")) || [];
 
   const saveCart = () => {
-    localStorage.setItem("cart", JSON.stringify(cart));
+    sessionStorage.setItem("cart", JSON.stringify(cart));
     updateCartCounter();
   };
 
@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
   };
   const deleteCart = () => {
-    localStorage.removeItem("cart");
+    sessionStorage.removeItem("cart");
     cart = [];
     updateCartCounter();
   };

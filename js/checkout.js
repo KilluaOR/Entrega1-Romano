@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const cart = JSON.parse(sessionStorage.getItem("cart")) || [];
   const checkoutItems = document.querySelector(".checkout__items");
   const subtotalElement = document.getElementById("subtotal");
   const totalElement = document.getElementById("total");
@@ -58,14 +58,11 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const deleteCart = () => {
-    localStorage.removeItem("cart");
-    // Clear the cart display
+    sessionStorage.removeItem("cart");
     checkoutItems.innerHTML =
       '<p class="text-white text-center py-4">Tu carrito está vacío</p>';
-    // Reset totals
     subtotalElement.textContent = "$0";
     totalElement.textContent = "$0";
-    // Hide checkout button since cart is empty
     checkoutButton.style.display = "none";
     deleteButton.style.display = "none";
   };
@@ -80,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
     checkoutButton.style.display = "none";
     deleteButton.style.display = "none";
 
-    localStorage.removeItem("cart");
+    sessionStorage.removeItem("cart");
 
     checkoutItems.innerHTML = "";
     subtotalElement.textContent = "$0";
